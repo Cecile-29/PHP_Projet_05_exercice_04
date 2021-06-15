@@ -15,8 +15,18 @@
         <div class="row border border-primary rounded p-3 m-4 text-secondary justify-content-center">
         <a class="mr-3" href="index.php">cliquez pour revenir</a>
             <?php 
-                echo 'langage : '. $_GET['langage']. '  '. 'Serveur : '. '  '. $_GET['serveur'];
-                if(!($_GET['serveur'] == true))
+                // echo 'langage : '. $_GET['langage']. '  '. 'Serveur : '. '  '. $_GET['serveur'];
+                // if(!($_GET['serveur'] == true))
+                // echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
+            ?>
+            <!-- Avec fonction isset() -->
+            <?php 
+            // on teste si la variable est défini avec la fonction isset()
+                echo '=> '. $_SERVER['SERVER_ADMIN']. '  ';
+                // sert à récupérer le nom de serveur et son administrateur
+                if(isset($_GET['serveur']))
+                echo '  '. 'langage : '. $_GET['langage']. '  '. 'Serveur : '. '  '. $_GET['serveur'];
+                else
                 echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
             ?>
         </div>
